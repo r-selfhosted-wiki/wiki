@@ -23,9 +23,9 @@ First think you'll want to do is Fork the [Github Repository](https://github.com
 
 Since we use a theme that has its own [Github Repository](https://github.com/matcornic/hugo-theme-learn), there is an extra flag we must add to our `git clone` command. 
 
-1. First, clone the forked repo into your local machine. the "recursive" flag should allow you to automatically pull in the git repo for the theme, as well.
+1. First, clone the forked repo into your local machine. the "recurse-submodules" flag should allow you to automatically pull in the git repo for the theme, as well.
 
-    `git clone --recursive https://github.com/{YOUR_USER_NAME}/wiki.git`  -- Be sure to modify this url to match your actual username and git repository name. 
+    `git clone --recurse-submodules https://github.com/{YOUR_USER_NAME}/wiki.git`  -- Be sure to modify this url to match your actual username and git repository name. 
 
 2. Move to the directory that was just cloned and make sure the `themes/hugo-theme-learn/` folder has content. 
 
