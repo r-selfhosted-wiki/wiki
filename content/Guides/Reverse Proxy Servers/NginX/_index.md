@@ -7,4 +7,4 @@ ___
 
 ## What is a Reverse Proxy
 
-To learn what a reverse proxy is, read the explanation [here](/content/Explanations/).
+To learn what a reverse proxy is, read the explanation [here](/Explanations/).
