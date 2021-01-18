@@ -16,7 +16,7 @@ Explainations:
 
 #### Reverse Proxies
 
-Reverse proxies are daemons that accept connections and then connect to another service based on port or host to facilitate the request. They act as a middle man instead of a traffice redirector.
+Reverse proxies are daemons that accept connections and then connect to another service based on port or host to facilitate the request. They act as a middle man instead of a traffic redirector.
 
 Typical use cases for reverse proxies are to provide a unified frontend for multiple backends or hosts. Another common use is for high-availability to provide failover or distribute load between multiple backends serving the same content.
 
