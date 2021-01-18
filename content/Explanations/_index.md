@@ -45,6 +45,18 @@ Accreditation requires quite a bit of infrastructure and vetting to make sure yo
 
 Resellers are popular because of low overhead and easy implementation. Many "white label" registrars have turnkey solutions for resellers to appear as independent registrars while actually reselling domain names.
 
+##### Which is right for you?
+
+Choosing a domain registrar is easy. Picking a domain registrar that is trustworthy and reputable is less so.
+
+Many domain registrars also offer to handle the DNS records for the domains registered with them. Many registrars have domain registration as a part of their business. Registration is usually bundled with webhosting or other related services. You may even get a domain registration for free if you agree to a year long hosting contract with a webhost.
+
+While bundling related services together under one roof may sound convenient, it is generally advised against. It is recommended to have your domain registration with a registrar, DNS records with another company, and hosting with yet another entity. Common reasoning for this advice is that if your service provider has a serious outage or other technical problem, it can only affect one aspect of your online presence. If you have all services under one provider, a technical issue could prevent your DNS from resolving and your website/service from being served.
+
+You can find a list of ICANN accredited domain registrars here: https://www.icann.org/registrar-reports/accreditation-qualified-list.html
+
+As far as finding a reputable, trustworthy service provider, we must insist on your own research. One of the most popular forums for discussing hosting and related services is **[Web Hosting Talk](https://www.webhostingtalk.com/)**. If a relevant service provider has a bad reputation in the industry, you can surely find out about it here.
+
 ##### Domain Name System
 
 The Domain Name System ( DNS ) is the method of defining what unique machines serve content for your domain.
@@ -106,18 +118,6 @@ There are many types of DNS records, lets go over some common ones. This list is
 | www<span></span>.example.com. | 86400 | IN | CNAME | example.com. |
 | example.com. | 86400 | IN | MX | 10 mail.mailserver.com |
 | example.com. | 86400 | IN | TXT | "Reserved for a purpose I am not legally required to disclose." |
-
-##### Which is right for you?
-
-Choosing a domain registrar is easy. Picking a domain registrar that is trustworthy and reputable is less so.
-
-Many domain registrars also offer to handle the DNS records for the domains registered with them. Many registrars have domain registration as a part of their business. Registration is usually bundled with webhosting or other related services. You may even get a domain registration for free if you agree to a year long hosting contract with a webhost.
-
-While bundling related services together under one roof may sound convenient, it is generally advised against. It is recommended to have your domain registration with a registrar, DNS records with another company, and hosting with yet another entity. Common reasoning for this advice is that if your service provider has a serious outage or other technical problem, it can only affect one aspect of your online presence. If you have all services under one provider, a technical issue could prevent your DNS from resolving and your website/service from being served.
-
-You can find a list of ICANN accredited domain registrars here: https://www.icann.org/registrar-reports/accreditation-qualified-list.html
-
-As far as finding a reputable, trustworthy service provider, we must insist on your own research. One of the most popular forums for discussing hosting and related services is **[Web Hosting Talk](https://www.webhostingtalk.com/)**. If a relevant service provider has a bad reputation in the industry, you can surely find out about it here.
 
 **[Top]({{< relref "#topics" >}} "To the top" )**
 
