@@ -102,7 +102,7 @@ There are many types of DNS records, lets go over some common ones. This list is
 | Domain | Time To Live | Class | Type | Content |
 |--------|--------------|----|------|---------|
 | example.com. | 86400  | IN | A    | 192.168.1.240 |
-| ipv6.example.com | 86400 | IN | AAAA | feef:00bb:2005:1eef:fbca:544d |
+| ipv6.example.com. | 86400 | IN | AAAA | feef:00bb:2005:1eef:fbca:544d |
 | www<span></span>.example.com. | 86400 | IN | CNAME | example.com. |
 | example.com. | 86400 | IN | MX | 10 mail.mailserver.com |
 | example.com. | 86400 | IN | TXT | "Reserved for a purpose I am not legally required to disclose." |
