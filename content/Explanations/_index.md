@@ -63,7 +63,7 @@ DNS records are part of your domain name configuration called a DNS *zone*.
 
 **SOA**: Start of Authority Records are generally handled by your DNS service provider automatically. They define:
 - **MNAME**: Master nameserver for the zone
-- **RNAME**: email for the domain administrator. Does not support "@", use periods. Periods before the domain name are escaped. EG: post.master@example.com => "post\\.master.example.com"
+- **RNAME**: email for the domain administrator. Does not support "@", use periods. Periods before the domain name are escaped. EG: sum.gai@example.com => "sum\\.gai.example.com"
 - **SERIAL**: The DNS zone **serial**, used to indicate when a zone has changed.
 - **REFRESH**: Time to wait for secondary nameservers to query the master
 - **RETRY**: Timeout for refreshing
