@@ -6,10 +6,19 @@ Here we will go over the basics of what self-hosting entails. There will be a la
 
 ### Contents
 
+- [Choosing a Server]({{< relref "#choosing-a-server">}} "Choosing a Server")
 - [Domain name registration]({{< relref "#registering-a-domain-name">}})
 - [DNS configuration]({{< relref "#domain-name-records">}} "Domain Name Records")
 - [Network configuration]({{< relref "#network-configuration">}})
 - [Server setup]({{< relref "#server-configuration">}} "Server Confirguration")
+
+#### Choosing a server
+
+A server can be just about anything. An old computer that you don't use anymore, a cheap small form factor machine from an online store, a custom built machine using server grade or consumer parts, or even a raspberry pi which can be gotten for under $100.
+
+An operating system to install to make it a server is another choice you have to make. Windows Server is usually not chosen due to licensing costs, but it is an option. Linux comes in many flavors to meet many needs. It is freely available and free to modify.
+
+**[To the top]({{< relref "#contents">}} "Top")**
 
 #### Registering a domain name
 
@@ -84,5 +93,7 @@ The basic steps are:
 - upload content into that folder
 
  Make sure the content folder has the permissions needed by your webserver, and you should be good to go.
+
+This same process is generally the same for any service, but the documentation for said service should be consulted.
 
 **[To the top]({{< relref "#contents">}} "Top")**
