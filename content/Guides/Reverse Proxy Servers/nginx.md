@@ -1,5 +1,6 @@
 ---
 Title: Nginx Reverse Proxy
+tags: [normal]
 ---
 ___
 ## What is a Reverse Proxy?
