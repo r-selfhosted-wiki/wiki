@@ -3,7 +3,7 @@ Title: How to set up an Nginx Reverse Proxy Server
 ---
 ___
 ## What is a Reverse Proxy?
-To learn what a reverse proxy is and why you should use one, read the explanation [here](/explanations/).
+To learn what a reverse proxy is and why you should use one, read the explanation [here](/explanations/#reverse-proxies).
 
 ## Prerequisites
 There are some prerequisites you'll need before setting up a reverse proxy server. The first thing you'll need is to have port 80 and 443 of your public IP address forwarded to the machine you want to use as a proxy. This can be configured through your router's admin page. You will also need a domain name with an A record that points to your public IP. Finally, you'll need some services running on your local network for you to proxy.
