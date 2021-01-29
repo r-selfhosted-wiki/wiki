@@ -1,6 +1,6 @@
 ---
 Title: Wire Guard
-tags: [easy]
+tags: [normal]
 ---
 
 Wireguard is a secure VPN tunnel that aims to provide a VPN that is easy to use, fast, and with low overhead.

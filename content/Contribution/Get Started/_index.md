@@ -19,7 +19,7 @@ Once you can successfully get a version number from the command `hugo version`, 
 
 ### Fork and Clone Operations
 
-First thing you'll want to do is Fork the [Github Repository](https://github.com/r-selfhosted-wiki/wiki) for the /r/selfhosted wiki. You'll be working within a repo that syncs with your own accounts' fork of the repository. 
+First thing you'll want to do is Fork the [Github Repository](https://github.com/r-selfhosted-wiki/wiki) for the /r/selfhosted wiki. You'll be working within a repo that syncs with your own accounts' fork of the repository.
 
 Since we use a theme that has its own [Github Repository](https://github.com/matcornic/hugo-theme-learn), there is an extra flag we must add to our `git clone` command.
 

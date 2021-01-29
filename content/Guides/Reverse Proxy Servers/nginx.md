@@ -1,5 +1,5 @@
 ---
-Title: How to set up an Nginx Reverse Proxy Server
+Title: Nginx Reverse Proxy
 ---
 ___
 ## What is a Reverse Proxy?

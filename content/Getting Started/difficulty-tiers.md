@@ -1,5 +1,6 @@
 ---
 Title: Difficulty Tiers
+tags: [easy, normal, hard]
 ---
 
 ### How hard *is* stuff?
