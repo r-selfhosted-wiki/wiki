@@ -8,7 +8,7 @@ Stuff can be hard. Stuff can also be easy. Some things here are hard. Some thing
 
 #### Easy / Basic
 
-No worries here man. Everything should be done with a gui with *maybe* some stuff needing a command or two. Instructions should come in picture form.
+No worries here man. Everything should be done with a gui with *maybe* some stuff needing a command or two, or maybe just editing some text files. Instructions should come in picture form.
 
 Operating systems in this tier are Ubuntu Linux, Windows, or OSX.
 
@@ -28,4 +28,4 @@ Operating systems in this tier are Arch, *BSD, Slackware Linux, Gentoo Linux.
 
 You compile your software from source and surf the web with lynx. If you don't know what that means you are a *poser*.
 
-You run [Suicide Linux]("https://qntm.org/suicide") because anything less is for babies.
+You run [Suicide Linux]("https://qntm.org/suicide") because anything less is for little babies.
