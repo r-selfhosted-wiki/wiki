@@ -26,7 +26,7 @@ These are operating systems that are administered with a gui/web-based front end
 If you are comfortable managing your server using a terminal, then these options will work for you. They do a lot of the hard work for you and should be simple to administer when needed.
 
 - [Ubuntu Server](https://ubuntu.com/server) | Debian based server OS developed by Canonical Ltd.
-- [Rocky Linux](https://rockylinux.org/) | Not yet released. Fork/replacement for CentOS.
+- [Rocky Linux](https://rockylinux.org/) | **Not yet released**. Fork/replacement for CentOS.
 - [OpenSuse](https://www.opensuse.org/)
 - [Fedora Linux](https://getfedora.org/en/server/)
 - [Debian](https://www.debian.org/) | One of two of the oldest linux distributions that are still maintained. Stable, mature, and proven.
