@@ -8,6 +8,9 @@ Title: Explanations
 
 Explainations:
 
+- [Servers]({{< relref "#servers">}} "Servers")
+    - [Daemons]({{< relref "#daemons">}} "Daemons")
+- [Webservers]({{< relref "#webservers">}} "Webservers" )
 - [Domain Names]({{< relref "#domain-names" >}} "Domain Names" )
     - [DNS]({{< relref "#domain-name-system" >}} "DNS")
 - [Reverse Proxies]({{< relref "#reverse-proxies" >}} "Reverse Proxies" )
@@ -15,6 +18,40 @@ Explainations:
 - [Containers]({{< relref "#containers" >}} "Containers" )
 - [Virtualization]({{< relref "#virtualization" >}} "Virtualization" )
 - [Virtual Private Networks]({{< relref "#virtual-private-networks" >}} "Virtual Private Networks" )
+- [Operating Systems]({{< relref "#operating-systems">}} "Operating Systems")
+
+
+#### Servers
+
+Servers are machines whos purpose is to provide a service or content over a network. They are typically administered remotely and only connect physically to power and a network. They "serve" content or services using software daemons.
+
+Bare metal servers are not virtualized. Any service or content they offer is configured on the host system. They are not new per-se, but with the introduction of containerization and virtualization, the phrase was coined to differentiate the old-school server tradition from newer techniques.
+
+Their natural habitat is the datacenter, where they live in racks to survive off electricity and network data. While they are not able to reproduce, they have no natural predators, so their population is stable. Some breeds of server can be found in network/data closets where they live in a business. Fewer still are kept in captivity in private homes.
+
+Virtual servers are servers that are run under an emulator or hypervisor to provide a server-like environment using a software envelope which may be augmented with hardware support.
+
+**[Top]({{< relref "#topics" >}} "To the top" )**
+
+#### Daemons
+
+Daemons are software packages that run perpetually to provide content or a service. They differentiate servers from clients.
+
+Examples of daemons are webservers, email servers, file servers, authentication services ( AD, LDAP ), database servers, and many more.
+
+**[Top]({{< relref "#topics" >}} "To the top" )**
+
+#### Webservers
+
+Webservers are daemons that accept HTTP requests and serve set content based on the requested host ( Ip address or domain name).
+
+The content can be static HTML/XML or it can be dynamic ( javascript, PHP, FCGI, WSGI ).
+
+Webservers commonly offer reverse proxy functionality, it is common to use webservers for this purpose instead.
+
+Common webservers are: apache, cherokee, litespeed, lighttpd, nginx, and IIS. Apache and Nginx are the top webservers by marketshare respectively, with IIS coming in third.
+
+**[Top]({{< relref "#topics" >}} "To the top" )**
 
 #### Domain Names
 
@@ -56,6 +93,8 @@ While bundling related services together under one roof may sound convenient, it
 You can find a list of ICANN accredited domain registrars here: https://www.icann.org/registrar-reports/accreditation-qualified-list.html
 
 As far as finding a reputable, trustworthy service provider, we must insist on your own research. One of the most popular forums for discussing hosting and related services is **[Web Hosting Talk](https://www.webhostingtalk.com/)**. If a relevant service provider has a bad reputation in the industry, you can surely find out about it here.
+
+**[Top]({{< relref "#topics" >}} "To the top" )**
 
 ##### Domain Name System
 
@@ -194,5 +233,21 @@ A typical use case is for networking corporate locations together to share netwo
 Another use for a VPN is to tunnel traffic destined for a public service through to another endpoint, usually to bypass geo-location restrictions or state-imposed censorship of the internet.
 
 Some use VPNs to keep services behind a restrictive ISP or firewall accessible outside of said network.
+
+**[Top]({{< relref "#topics" >}} "To the top" )**
+
+#### Operating Systems
+
+An operating system is the software that is responsible for running and managing your physical machine. It provides the kernel, hardware drivers, low-level software packages, libraries, and userland applications for the end-user to provide basic functions.
+
+End user operating systems for desktop computers or laptops is typically Windows.
+
+Corporate IT infrastructure to serve employees is generally Microsoft based as well using AD for authentication, on-premesis exchange, IIS webservers, mssql databases, and other service needs.
+
+The operating system used to serve content and services to end customers is typically linux or unix based. Examples are webhosts for serving websites, Netflix for serving movie and TV streams, DNS services for domain records, and most if not all other infrastructure needed to keep the internet operational.
+
+Android is a linux based operating system used in the majority of the smart phone market. IOS is a unix based mobile OS used by apple for iPhones.
+
+Embedded Linux and BSD are also used in devices like set top boxes, smart TVs, routers, smart switches, medical equipment, flight telemetry controllers for aerospace, navigation equipment, industrial automation, etc.
 
 **[Top]({{< relref "#topics" >}} "To the top" )**

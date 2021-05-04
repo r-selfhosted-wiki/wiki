@@ -1,5 +1,6 @@
 ---
 Title: Wire Guard
+tags: [normal]
 ---
 
 Wireguard is a secure VPN tunnel that aims to provide a VPN that is easy to use, fast, and with low overhead.
@@ -128,11 +129,11 @@ THE END ( maybe )
 
 Next we are going to setup a small cron job that will ping the WG server on its private IP to make sure the connection is still intact. If the connection fails, the tunnel will be restarted.
 
-You can put this script anywhere, but I usually choose to put it in */usr/local/etc/scripts/*.
+You can put this script anywhere, but I usually choose to put it in */usr/local/scripts/*.
 
-    mkdir /usr/local/etc/scripts
+    mkdir /usr/local/scripts
 
-Now for the script. I use **wg-watch.sh**. Lets assume you are going to be using */usr/local/etc/scripts/wg-watch.sh* for the **full file path**.
+Now for the script. I use **wg-watch.sh**. Lets assume you are going to be using */usr/local/scripts/wg-watch.sh* for the **full file path**.
 
 
     #!/usr/bin/bash
@@ -166,7 +167,7 @@ Now for the script. I use **wg-watch.sh**. Lets assume you are going to be using
 
 Make the script executable:
 
-    chmod +x /usr/local/etc/scripts/wg-watch.sh
+    chmod +x /usr/local/scripts/wg-watch.sh
 
 
 Once we have that done, we need to schedule it. I choose to schedule this every five minutes, but if you want to wait longer that is up to you.
@@ -179,7 +180,7 @@ We're going to use *crontab* to add this script to the list of jobs.
 
 Once the crontab editor is open, add this:
 
-    */5 * * * * /usr/local/etc/scripts/wg-watch.sh
+    */5 * * * * /usr/local/scripts/wg-watch.sh
 
 Write and close the file. Crontab should confirm that it has been updated.
 
