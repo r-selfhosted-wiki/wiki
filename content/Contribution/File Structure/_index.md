@@ -1,8 +1,8 @@
 ---
-title: File Structure
+Title: File Structure
 ---
 
-Hugo's file structure is simple. Here is an example of some of the file structure of this very wiki.
+Hugo's file structure is simple. For example, here is the part of the file structure of this very wiki.
 
     / content
       _index.md

@@ -1,44 +1,44 @@
 ---
-Title: Wire Guard
+Title: WireGuard
 tags: [normal]
 ---
 
-Wireguard is a secure VPN tunnel that aims to provide a VPN that is easy to use, fast, and with low overhead.
+WireGuard is a secure VPN tunnel that aims to provide a VPN that is easy to use, fast, and with low overhead.
 
-It is cross platform, but it is part of the linux kernel by default with only the need of userland tools to configure and deploy it.
+It is cross-platform, but it is the part of the Linux kernel by default with only the need of userland tools to configure and deploy it.
 
 #### Preface
 
-From now on, we are going to assume that we are working on linux to configure wireguard with one server and at least one client.
+From now on, we are going to assume that we are working on Linux to configure WireGuard with one server and at least one client.
 
-This guide assumes that this configuration is being performed as root or the super-user. For your distribution this may require you to prefix commands with 'sudo'.
+This guide assumes that this configuration is being performed as root or the superuser. For your distribution this may require you to prefix commands with 'sudo'.
 
 #### Installation
 
-You can find more details about installing wireguard on your own operating system here: https://www.wireguard.com/install/ . Please complete installation for both the server and client machine.
+You can find more details about installing WireGuard on your own operating system here: https://www.wireguard.com/install/. Please complete installation for both the server and client machine.
 
 ##### Make the keys
 
-The first step after installing wireguard for your distribution is to generate keys. We should do this for the server first, but this will be the same for clients as well.
+The first step after installing WireGuard for your distribution is to generate keys. We should do this for the server first, but this will be the same for clients as well.
 
     cd /etc/wireguard && wg genkey | tee private.key | wg pubkey > public.key
 
-You should now have a **public.key** and **private.key** file in */etc/wireguard/*.
+You should now have **public.key** and **private.key** files in */etc/wireguard/*.
 
->It is important to make sure your private key stays private. No private key should ever leave the machine it was generated on. The client and server will only need the public keys for eachother. If you are using the private keys for a client on a server, or vice-versa, you are doing something wrong.
+>It is important to make sure your private key stays private. No private key should ever leave the machine it was generated on. The client and server will only need the public keys for each other. If you are using the private keys for a client on a server, or vice-versa, you are doing something wrong.
 
 #### Server configuration
 
 Since this is the server, we need to make a new configuration file for it in */etc/wireguard/*. We will call it **wg0.conf**. The full path should end up being */etc/wireguard/wg0.conf*.
 
->Please use your own private key where appropriate. You can view the contents of a text file from the command line with *cat* (EG: **cat /path/to/text.file** ).
+>Please use your own private key where appropriate. You can view the contents of a text file from the command line with *cat* (e.g.: **cat /path/to/text.file**).
 
-You can change the **Address** field to use a different address space ( EG: 192.168.x.1 ) if you wish. If your server or clients are already using private IP space on a LAN, **use something different**.
+You can change the **Address** field to use a different address space (e.g.: 192.168.x.1) if you wish. If your server or clients are already using private IP space on a LAN, **use something different**.
 
     [Interface]
     ## Private IP address for the server to use
     Address = 10.0.0.1/24
-    ## When WG is shutdown, flushes current running configuration to disk. Any changes made to the configuration before shutdown will be forgotten.
+    ## When WG is shutdown, flushes current running configuration to disk. Any changes made to the configuration before shutdown will be forgotten
     SaveConfig = true
     ## The port WG will listen on for incoming connections. 51194 is the default
     ListenPort = 51194
@@ -47,7 +47,7 @@ You can change the **Address** field to use a different address space ( EG: 192.
 
 After this is done we should be able to start the VPN tunnel and make sure it's enabled.
 
->Please consult the documentation for your linux distribution for enabling/starting services. This guide is using system tools installed on debian and debian based distributions.
+>Please consult the documentation for your Linux distribution for enabling/starting services. This guide is using system tools installed on Debian and Debian-based distributions.
 
 ##### *Debian*
 
@@ -55,11 +55,11 @@ After this is done we should be able to start the VPN tunnel and make sure it's 
 
 That should be it for the server portion.
 
-#### Client Configuration
+#### Client configuration
 
-The client will need keys too. Use the same procedure to [make keys]({{< relref "#make-the-keys" >}} "make keys") for the client as we did for the server.
+The client will need keys too. Use the same procedure to [make keys]({{<relref "#make-the-keys">}} "make keys") for the client as we've done for the server.
 
-Once that is done we need to create a client configuration. Lets make **wg0-client.conf** in */etc/wireguard/*. Full path should be */etc/wireguard/wg0-client.conf*.
+Once that is done we need to create a client configuration. Let's make **wg0-client.conf** in */etc/wireguard/*. Full path should be */etc/wireguard/wg0-client.conf*.
 
 You will need to choose a unique IP for the client. Everything should be the same as the server's private IP except the last octet.
 
@@ -67,7 +67,7 @@ You will need to choose a unique IP for the client. Everything should be the sam
     ## This Desktop/client's private key ##
     PrivateKey = CLIENTPRIVATEKEY
 
-    ## Client ip address ##
+    ## Client IP address ##
     Address = 10.0.0.CLIENTOCTET/32
 
     [Peer]
@@ -83,12 +83,12 @@ You will need to choose a unique IP for the client. Everything should be the sam
     ## Your WG server's PUBLIC IPv4/IPv6 address and port ##
     Endpoint = WGSERVERPUBLICIP:51194
 
-    ##  Key connection alive ##
+    ## Key connection alive ##
     PersistentKeepalive = 20
 
-This should be all you need for configuring the client end connection. We will need the private client IP you chose and the public client key in a bit.
+This should be all you need for configuring the client-end connection. We will need the private client IP you've chosen and the public client key in a bit.
 
-As with the server, we need to enable the wireguard client service. We don't start it yet because the server still doesn't know about this client.
+As with the server, we need to enable the WireGuard client service. We don't start it yet because the server still doesn't know about this client.
 
 ##### *Debian*
 
@@ -102,15 +102,15 @@ Run the following command on the WG server to add the client.
 
     wg set wg0 peer CLIENTPUBLICKEY allowed-ips CLIENTPRIVATEIP/32
 
-You should not need to restart the wireguard service
+You should not need to restart the WireGuard service.
 
-Lets start the WG client service on the client:
+Let's start the WG client service on the client:
 
 ##### *Debian*
 
     systemctl start wg-quick@wg0-client
 
-To check that it is working, ping the wg server on its private IP.
+To check that it works, ping the WG server on its private IP.
 
 
     $ ping -c 1 10.0.0.1
@@ -121,11 +121,11 @@ To check that it is working, ping the wg server on its private IP.
     1 packets transmitted, 1 received, 0% packet loss, time 0ms
     rtt min/avg/max/mdev = 0.071/0.071/0.071/0.000 ms
 
-If you consider your client internet connection stable, this next step may not be nessecary. You can consider yourself done if you wish.
+If you consider your client Internet connection stable, this next step may not be necessary. You can consider yourself done if you wish.
 
-THE END ( maybe )
+THE END (maybe)
 
-#### Wireguard watchdog ( OPTIONAL )
+#### WireGuard watchdog (OPTIONAL)
 
 Next we are going to setup a small cron job that will ping the WG server on its private IP to make sure the connection is still intact. If the connection fails, the tunnel will be restarted.
 
@@ -133,7 +133,7 @@ You can put this script anywhere, but I usually choose to put it in */usr/local/
 
     mkdir /usr/local/scripts
 
-Now for the script. I use **wg-watch.sh**. Lets assume you are going to be using */usr/local/scripts/wg-watch.sh* for the **full file path**.
+Now for the script. I use **wg-watch.sh**. Let's assume you are going to use */usr/local/scripts/wg-watch.sh* for the **full file path**.
 
 
     #!/usr/bin/bash
@@ -160,7 +160,7 @@ Now for the script. I use **wg-watch.sh**. Lets assume you are going to be using
     ## DEBIAN
     $SERVICE wg-quick@wg0-client restart
 
->Please make sure the paths to certain binaries are congruent with your own system. If they are not, the script will fail. Some distributions put them in different places ( EG: /bin/bash instead of /usr/bin/bash ). If you are not sure where they are, you can do *which binaryname* that should report the full path to the binary.
+>Please make sure the paths to certain binaries are congruent with your own system. If they are not, the script will fail. Some distributions put them in different places (e.g.: /bin/bash instead of /usr/bin/bash). If you are not sure where they are, you can do `which binaryname` that should report the full path to the binary.
 
     $ which bash
     /usr/bin/bash
@@ -184,4 +184,4 @@ Once the crontab editor is open, add this:
 
 Write and close the file. Crontab should confirm that it has been updated.
 
-You should be set with a wireguard VPN tunnel between a server and a client along with a script to bring the tunnel back up if it fails.
+You should be set with a WireGuard VPN tunnel between a server and a client along with a script to bring the tunnel back up if it fails.

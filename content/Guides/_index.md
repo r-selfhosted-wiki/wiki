@@ -1,15 +1,15 @@
 ---
-title: Guides
+Title: Guides
 ---
 
 # Guides
 
 Find the link to your desired guide below!
 
-#### Reverse Proxies
+#### Reverse proxies
 
-- [Nginx]({{< relref "nginx.md">}} "Nginx")
+- [nginx]({{<relref "nginx.md">}} "nginx")
 
-#### Virtual Private Networks
+#### Virtual private networks
 
-- [Wireguard]({{< relref "wireguard.md">}} "WireGuard")
+- [WireGuard]({{<relref "wireguard.md">}} "WireGuard")

@@ -3,13 +3,13 @@ Title: Adding a Page
 ---
 
 
-Adding pages with Hugo is easy! Each page has it's own folder with an _index.md file. Make a new folder with an _index.md file inside.
+Adding pages with Hugo is easy! Each page has its own folder with an _index.md file. Make a new folder with an _index.md file inside.
 
 The _index.md file looks like this
 
     ---
     Title: TITLE HERE
-    Other meta fields: meta field content
+    Other metafields: metafield content
     ---
 
     Content!
