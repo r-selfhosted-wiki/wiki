@@ -1,17 +1,17 @@
 ---
-title: "Modify a Page"
+Title: Modify a Page
 ---
 
-Modifying a page is as simple as changing the _index.md file inside of a folder.
+Modifying a page is as simple as changing the _index.md file inside a folder.
 
     \ content
-      _index.md <-- This here
+      _index.md <-- this here
 
         \ Subfolder
-          _index.md   <-- or this one.
+          _index.md   <-- or this one
 
         \ Subfolder2
-          _index.md    <-- or even this one too.
+          _index.md    <-- or even this one too
 
 Hugo uses Markdown to format and style text, among other things.
 

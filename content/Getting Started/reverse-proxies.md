@@ -1,18 +1,18 @@
 ---
-Title: Intro to reverse proxies
+Title: Intro to Reverse Proxies
 ---
 
 ### **Reverse proxies and YOU**
 
 What can a reverse proxy do for *you*?
 
-Many services that are self-hosted have a web-ui. If you have many of these services running, a reverse proxy can be a central daemon that handles requests for all of these various backends.
+Many services that are self-hosted have a web UI. If you have many of these services running, a reverse proxy can be a central daemon that handles requests for all of these various backends.
 
-Lets say that you have three different services running:
+Let's say that you have three different services running:
 
 - Node.js forum NodeBB that runs on port 8008
 - Navidrome music streaming server on port 3000 through a local machine using IP 192.168.1.125
-- Owncloud webui on port 8800 on a a local machine with an IP of 192.168.1.123
+- ownCloud web UI on port 8800 on a local machine with an IP of 192.168.1.123
 
 You have a domain name that you want to use for these but don't want an ugly URL like http://mydomain.com:8008. To complicate things further, these services are all on different hosts.
 
@@ -26,6 +26,6 @@ To make your URLs pretty, the reverse proxy can be configured to redirect reques
 
 As you can see, it is much nicer to reach these services through a single domain and folder than to use their port and host individually.
 
-You can even couple this with a self-hosted VPN so that these requests can be proxied to different services on different networks in different locations. All you need to do is make sure the proxy and the services are on the same VPN and to use the VPN IP addresses.
+You can even couple this with a self-hosted VPN so that these requests can be proxied to different services on different networks in different locations. All you need to do is to make sure the proxy and the services are on the same VPN and to use the VPN IP addresses.
 
 You don't have to use folders either. You can use subdomains as well such as music.mydomain.com, cloud.mydomain.com, and forum.mydomain.com respectively. It's all up to you and how you want to structure your services.
