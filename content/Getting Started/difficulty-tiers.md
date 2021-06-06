@@ -29,4 +29,4 @@ Operating systems in this tier are Arch, *BSD, Slackware Linux, Gentoo Linux.
 
 You compile your software from source and surf the web with Lynx. If you don't know what that means you are a *poser*.
 
-You run [Suicide Linux]("https://qntm.org/suicide") because anything less is for little babies.
+You run [Suicide Linux](https://qntm.org/suicide) because anything less is for little babies.
