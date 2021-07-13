@@ -9,7 +9,7 @@ While paying for a licensed product is always an option if you find the value in
 #### Proprietary / Licensed
 
 - [Microsoft Windows Server](https://www.microsoft.com/en-us/windows-server/) | Windows is not usually chosen due to licensing costs.
-- [Unraid](https://unraid.net/) | Linux-based, but requires the purchase of a license for usage past the trail period.
+- [Unraid](https://unraid.net/) | Linux-based, but requires the purchase of a license for usage past the trial period.
 
 #### Entry Level / Easy
 
