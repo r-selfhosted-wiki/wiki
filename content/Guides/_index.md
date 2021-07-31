@@ -2,7 +2,7 @@
 Title: Guides
 ---
 
-# Guides
+<!-- # Guides -->
 
 Find the link to your desired guide below!
 
@@ -13,3 +13,7 @@ Find the link to your desired guide below!
 #### Virtual private networks
 
 - [WireGuard]({{<relref "wireguard.md">}} "WireGuard")
+
+#### DevOps Toolchains
+
+- - [Gitlab Installation on Kuberntes]({{<relref "gitlab-kubernetes.md">}} "gitlab")
