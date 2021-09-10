@@ -15,6 +15,7 @@ Daemons that serve website content.
 - [Apache](https://httpd.apache.org/) | The most popular webserver since forever. Higher overhead than others, but most PHP applications assume it.
 - [nginx](https://www.nginx.com/) | Second most popular webserver today, created to run some of the biggest Russian websites.
 - [Lighttpd](https://www.lighttpd.net/) | A more niche webserver focusing on low overhead and high performance.
+- [Caddy](https://caddyserver.com/) | A fast, multi-platform web server with automatic HTTPS.
 
 #### Databases
 
