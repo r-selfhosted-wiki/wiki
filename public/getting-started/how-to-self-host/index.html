@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="description" content="The official wiki for the reddit /r/selfhosted community">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>How to Self-Host | | /r/SelfHosted Official Wiki</title>
+
+    
+    <link href="/css/nucleus.css?1634336620" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1634336620" rel="stylesheet">
+    <link href="/css/hybrid.css?1634336620" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1634336620" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1634336620" rel="stylesheet">
+    <link href="/css/auto-complete.css?1634336620" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1634336620" rel="stylesheet">
+    <link href="/css/theme.css?1634336620" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1634336620" rel="stylesheet">
+    
+    <link href="/css/theme-green.css?1634336620" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1634336620"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/getting-started/how-to-self-host/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <img src="/images/logo.png" alt="Selfhosted Logo" height="100px" />
+<h5>/r/Selfhosted Official Wiki</h5>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1634336620"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1634336620"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1634336620"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/" title="Contribution Guidelines" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/">
+          Contribution Guidelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/get-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/get-started/">
+          Getting Started
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/adding-a-page/" title="Adding a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/adding-a-page/">
+          Adding a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/file-structure/" title="File Structure" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/file-structure/">
+          File Structure
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/modify-a-page/" title="Modify a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/modify-a-page/">
+          Modify a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/explanations/" title="Explanations" class="dd-item
+        
+        
+        
+        ">
+      <a href="/explanations/">
+          Explanations
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/getting-started/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/difficulty-tiers/" title="Difficulty Tiers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/difficulty-tiers/">
+          Difficulty Tiers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/how-to-self-host/" title="How to Self-Host" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/getting-started/how-to-self-host/">
+          How to Self-Host
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/reverse-proxies/" title="Intro to Reverse Proxies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/reverse-proxies/">
+          Intro to Reverse Proxies
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/operating-systems/" title="Operating Systems" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/operating-systems/">
+          Operating Systems
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/self-hosted-alternatives/" title="Self-Hosted Alternatives" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/self-hosted-alternatives/">
+          Self-Hosted Alternatives
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/what-is-self-hosting/" title="What is Self-Hosting?" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/what-is-self-hosting/">
+          What is Self-Hosting?
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/" title="DevOps Toolchains" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/">
+          DevOps Toolchains
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/gitlab-kubernetes/" title="Gitlab Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/gitlab-kubernetes/">
+          Gitlab Installation
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/" title="Reverse Proxy Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/">
+          Reverse Proxy Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/nginx/" title="Nginx Reverse Proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/nginx/">
+          Nginx Reverse Proxy
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/" title="Virtual Private Networks" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/">
+          Virtual Private Networks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/wireguard/" title="WireGuard" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/wireguard/">
+          WireGuard
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/webservers/" title="Webservers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/webservers/">
+          Webservers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>/r/Selfhosted Official Wiki</a> > <a href='/getting-started/'>Getting Started</a> > How to Self-Host
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#contents">Contents</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              How to Self-Host
+            </h1>
+          
+
+        
+
+
+
+	<p>Here we will go over the basics of what self-hosting entails. There will be a lack of detail in each individual step as those details are reserved for their own documentation in a separate article or are specific to a provider/service as not everything can be self-hosted, especially if you wish to make a service publicly available.</p>
+<h3 id="contents">Contents</h3>
+<ul>
+<li><a href="#choosing-a-server" title="Choosing a Server">Choosing a server</a></li>
+<li><a href="#registering-a-domain-name" title="Registering a Domain Name">Domain name registration</a></li>
+<li><a href="#domain-name-records" title="Domain Name Records">DNS configuration</a></li>
+<li><a href="#network-configuration" title="Network Configuration">Network configuration</a></li>
+<li><a href="#server-configuration" title="Server Configuration">Server setup</a></li>
+</ul>
+<h4 id="choosing-a-server">Choosing a server</h4>
+<p>A server can be just about anything. An old computer that you don&rsquo;t use anymore, a cheap small form factor machine from an online store, a custom built machine using server grade or consumer parts, or even a Raspberry Pi which can be gotten for under $100.</p>
+<p>An operating system to install to make it a server is another choice you have to make. Windows Server is usually not chosen due to licensing costs, but it is an option. Linux comes in many flavors to meet many needs. It is freely available and free to modify.</p>
+<p><strong><a href="#contents" title="Top">To the top</a></strong></p>
+<h4 id="registering-a-domain-name">Registering a domain name</h4>
+<p>Registering a <a href="/explanations/#domain-names" title="domain name">domain name</a> is usually the first step when you are looking to have something self-hosted that is reachable via the Internet. Although you can even find a free domain name, it is always a good idea to find a domain registrar you can trust; recommending specific providers is outside the scope of this wiki.</p>
+<p>Top-level domain names vary in price. Dot.com domain names are usually ~$15/yr, while others like dot.net or dot.info are typically less. Some can be more expensive, and the registrar will have their price listings based on the top-level domain. Domain registration is a competitive business, with lots of resellers working for white-label registrars. You can look at several registrars to compare prices for the domain you want to register. In some cases you may choose a free domain name, e.g. under .TK, .ML, .GA, .CF, or .GQ, but be ready that most search engines would range your site much worse, so such solution is not recommended for serious projects.</p>
+<p>Domain registrations are on a first-come, first-serve basis. If the domain name you want is already taken, you will have to wait until it expires, or buy it from the current owner. Otherwise, you can come up with a different domain name to register.</p>
+<p><strong>BEWARE</strong>: Some domain registrars will take domain names that you search for, but not purchase, and &ldquo;hold&rdquo; their registration.</p>
+<p>E.g.: You go to someregistrar.com and search for ilikeponies.com to see if it&rsquo;s available for registration. You find that it is available, but want to check out someotherregistrar.com to see their prices for the same domain. When you check there, the domain ilikeponies.com is taken. But when you search for it again on someregistrar.com, it&rsquo;s still available.</p>
+<p>What is happening is that someregistrar.com has &ldquo;held&rdquo; the registration for a period of time to prevent you from registering it elsewhere in hopes that you take your business with them.</p>
+<p>While we are not certain of the legality of such practice, it is considered uncouth and frowned upon in the industry. You can resolve this by contacting the registrar, telling them they are massive jerks, and have them release the hold.</p>
+<p>If they have no shame, you may have to explain that your poor experience with them can wind up on webhostingtalk.com for the world to see.</p>
+<p><strong><a href="#contents" title="Top">To the top</a></strong></p>
+<h4 id="domain-name-records">Domain name records</h4>
+<p>Once you have registered a domain name, you will need to configure the nameservers and then add <a href="/explanations/#domain-name-system" title="DNS records">DNS records</a> for the domain that points to the IP address of your server.</p>
+<p>Your domain registrar makes use of the nameserver records, and your DNS provider will take care of the other types of records.</p>
+<p>The basic DNS records to add are an A record for yourdomainname.com, and a CNAME for <a href="http://www.yourdomainname.com">www.yourdomainname.com</a>.</p>
+<p>Get the IP address of the machine you will use. If you serve locally, then the local IP address of the machine will not work (e.g.: 192.168.1.X). You will have to use your public IP and use a reverse proxy + VPN or port forward. You can find your public IP address on your router status page or by going to <a href="https://ifconfig.me/">https://ifconfig.me/</a>.</p>
+<p>Use that IP as the content for your DNS A record.</p>
+<p>See your router documentation for directions on setting up port forwarding to the machine&rsquo;s local IP address.</p>
+<p><strong><a href="#contents" title="Top">To the top</a></strong></p>
+<h4 id="network-configuration">Network configuration</h4>
+<p>Your ISP is likely to block common ports used for Internet traffic such as 80 (HTTP), 443 (HTTPS), 21 (FTP), 25 (email SMTP), and many others.</p>
+<p>Some ISPs will have no problem unblocking some of these ports, but don&rsquo;t expect them to cooperate.</p>
+<p>Regardless, there are options to get around these issues if your ISP is non-cooperative. There may be clauses in your service agreement stating that hosting services from your home Internet connection is prohibited. While ISPs rarely take action against customers if they are found in violation of this rule, there are legitimate reasons for having such clause.</p>
+<p>Generally if you bypass their restrictions to self-host anyway, they don&rsquo;t care unless you cause problems for them.</p>
+<p>If you have a business Internet plan, these issues don&rsquo;t exist. You may still have to request a static IP, but your ISP should not be blocking ports by default as it is assumed you will be handling that yourself. If they are, they should cooperate with any unblocking requests.</p>
+<p>The typical way to bypass these restrictions is either to port forward (if your ISP doesn&rsquo;t block the ports) or using a reverse proxy in conjunction with a VPN using an Internet-reachable machine.</p>
+<p>You also have to contend with dynamic IP addresses. Your home connection is assigned to a public IP address, but it is not fixed, and can change if your DHCP lease on their network expires. Some ISPs may offer to provide you a static IP address for a monthly fee.</p>
+<p>For dynamic IP addresses, your DNS provider may support dynamic DNS updates. This can either require a dedicated client, or to simply call a URL with an embedded token with a program like Wget or cURL. It is an effective way to have a DNS record automatically updated on a regular basis to counteract a changing IP address.</p>
+<p><strong><a href="#contents" title="Top">To the top</a></strong></p>
+<h4 id="server-configuration">Server configuration</h4>
+<p>You need a server to handle requests for your domain name. This can be a shared hosting account with a web hosting provider, a dedicated server, a virtual private server, or your own server running locally.</p>
+<p>Despite the fact that you might find providers that could serve you some limited server storage and computing power remotely even for free, this is a self-hosting guide, so the assumption that the server is local has been made.</p>
+<p>Once you have chosen and installed the operating system you are going to use, you will need to setup your service daemon. For the sake of this article, we will assume that you&rsquo;d like to serve a website using your domain name.</p>
+<p>There are a variety of web servers available, and the specific details on configuring that web server will be covered elsewhere.
+The basic steps are:</p>
+<ul>
+<li>install the web server</li>
+<li>configure it to answer for your domain name</li>
+<li>give it a directory to serve from (/some/directory/domainname.com/html)</li>
+<li>upload content into that folder</li>
+</ul>
+<p>Make sure the content folder has the permissions needed by your web server, and you should be good to go.</p>
+<p>This same process is generally the same for any service, but the documentation for said service should be consulted.</p>
+<p><strong><a href="#contents" title="Top">To the top</a></strong></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/getting-started/difficulty-tiers/" title="Difficulty Tiers"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/getting-started/reverse-proxies/" title="Intro to Reverse Proxies" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1634336620"></script>
+    <script src="/js/perfect-scrollbar.min.js?1634336620"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1634336620"></script>
+    <script src="/js/jquery.sticky.js?1634336620"></script>
+    <script src="/js/featherlight.min.js?1634336620"></script>
+    <script src="/js/highlight.pack.js?1634336620"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1634336620"></script>
+    <script src="/js/learn.js?1634336620"></script>
+    <script src="/js/hugo-learn.js?1634336620"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1634336620"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

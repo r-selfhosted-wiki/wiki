@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="description" content="The official wiki for the reddit /r/selfhosted community">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Gitlab Installation | | /r/SelfHosted Official Wiki</title>
+
+    
+    <link href="/css/nucleus.css?1634336620" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1634336620" rel="stylesheet">
+    <link href="/css/hybrid.css?1634336620" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1634336620" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1634336620" rel="stylesheet">
+    <link href="/css/auto-complete.css?1634336620" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1634336620" rel="stylesheet">
+    <link href="/css/theme.css?1634336620" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1634336620" rel="stylesheet">
+    
+    <link href="/css/theme-green.css?1634336620" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1634336620"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/guides/devops-toolchains/gitlab-kubernetes/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <img src="/images/logo.png" alt="Selfhosted Logo" height="100px" />
+<h5>/r/Selfhosted Official Wiki</h5>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1634336620"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1634336620"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1634336620"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/" title="Contribution Guidelines" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/">
+          Contribution Guidelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/get-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/get-started/">
+          Getting Started
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/adding-a-page/" title="Adding a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/adding-a-page/">
+          Adding a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/file-structure/" title="File Structure" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/file-structure/">
+          File Structure
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/modify-a-page/" title="Modify a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/modify-a-page/">
+          Modify a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/explanations/" title="Explanations" class="dd-item
+        
+        
+        
+        ">
+      <a href="/explanations/">
+          Explanations
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/difficulty-tiers/" title="Difficulty Tiers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/difficulty-tiers/">
+          Difficulty Tiers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/how-to-self-host/" title="How to Self-Host" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/how-to-self-host/">
+          How to Self-Host
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/reverse-proxies/" title="Intro to Reverse Proxies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/reverse-proxies/">
+          Intro to Reverse Proxies
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/operating-systems/" title="Operating Systems" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/operating-systems/">
+          Operating Systems
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/self-hosted-alternatives/" title="Self-Hosted Alternatives" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/self-hosted-alternatives/">
+          Self-Hosted Alternatives
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/what-is-self-hosting/" title="What is Self-Hosting?" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/what-is-self-hosting/">
+          What is Self-Hosting?
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/" title="DevOps Toolchains" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/">
+          DevOps Toolchains
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/gitlab-kubernetes/" title="Gitlab Installation" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/guides/devops-toolchains/gitlab-kubernetes/">
+          Gitlab Installation
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/" title="Reverse Proxy Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/">
+          Reverse Proxy Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/nginx/" title="Nginx Reverse Proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/nginx/">
+          Nginx Reverse Proxy
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/" title="Virtual Private Networks" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/">
+          Virtual Private Networks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/wireguard/" title="WireGuard" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/wireguard/">
+          WireGuard
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/webservers/" title="Webservers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/webservers/">
+          Webservers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>/r/Selfhosted Official Wiki</a> > <a href='/guides/'>Guides</a> > <a href='/guides/devops-toolchains/'>DevOps Toolchains</a> > Gitlab Installation
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#requirements">Requirements</a></li>
+      </ul>
+    </li>
+    <li><a href="#lets-get-started">Lets get Started</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/normal">normal</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Gitlab Installation
+            </h1>
+          
+
+        
+
+
+
+	<hr>
+<h2 id="introduction">Introduction</h2>
+<p>In this article, I will describe all the steps required to setup GitLab CI/CD in kuberntes using kustomize.
+We will go through how to run GitLab on Kubernetes when you have related resources <code>postgres</code>, <code>redis</code>, <code>minio</code>, <code>tls certificates</code> etc already available in your setup.</p>
+<p>This is a very common scenario in companies and also for self-hosting that you are already using these services in your environment and prefer to use the same for gitlab.</p>
+<p><em>The all in one production installation may be easily performed with Helm. You can refer to official documentation from gitlab if that is your requirement.</em></p>
+<h3 id="requirements">Requirements</h3>
+<p>You will need the following in order to run gitlab.</p>
+<ol>
+<li>Database : Postgres database is required for gitlab.</li>
+<li>Cache :   Redis is used for caching.</li>
+<li>Storage : Minio is used as object storage for <code>container registry</code>, <code>gitlab backups</code>, <code>terraform storage backend</code>, <code>gitlab artifacts</code> etc.</li>
+<li>Ingress Controller : Nginx ingress is part of installation.</li>
+<li>Persistent Volume : Gitaly will store <code>repository data</code> data on disk, for that your kubernetes cluster must have a way of provisioning storage. You can install <a href="https://github.com/rancher/local-path-provisioner">local path provisioner</a> in your cluster for dynamically provisioning volumes.</li>
+</ol>
+<ul>
+<li>Repositories
+<ol>
+<li><a href="https://github.com/kha7iq/gitlab-k8s">Gitlab Manifests</a></li>
+<li><a href="https://github.com/kha7iq/subvars">SubVars App</a></li>
+</ol>
+</li>
+</ul>
+<p><em>Info: You can swap minio with any other object storage i.e S3 by changing connection info secret</em></p>
+<h2 id="lets-get-started">Lets get Started</h2>
+<p>When installing gitlab with helm it generates the configmaps after rendering the templates with parameters, we can manually change these values in configmaps but its a hassle and not convenient.</p>
+<p>To make this process easy we will use a tool called <a href="https://github.com/kha7iq/subvars">subvars</a> which will let us render these values from command line. Install it by following the instructions on <a href="https://github.com/kha7iq/subvars">github</a> page, we will use it later.</p>
+<ol>
+<li>Download the release with manifests from <a href="https://github.com/kha7iq/gitlab-k8s">github</a> alternatively you can clone the repo, if you are cloning the repo remove the <code>.git</code> folder afterwards as it creates issues some times when rendering multiple version of the same file with subvars.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export RELEASE_VER<span style="color:#f92672">=</span>1.0
+wget -q https://github.com/kha7iq/gitlab-k8s/archive/refs/tags/v<span style="color:#e6db74">${</span>RELEASE_VER<span style="color:#e6db74">}</span>.tar.gz
+tar -xf v<span style="color:#e6db74">${</span>RELEASE_VER<span style="color:#e6db74">}</span>.tar.gz
+cd gitlab-k8s-<span style="color:#e6db74">${</span>RELEASE_VER<span style="color:#e6db74">}</span>
+</code></pre></div><ol start="2">
+<li>Lets start by setting the url for gitlab in our <a href="https://github.com/kha7iq/gitlab-k8s/blob/master/ingress-nginx/kustomization.yaml">kustomization file</a> within ingress-nginx folder. You will find two blocks, one for web-ui and second for registry along with tls-secret-name for https.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">patch</span>: |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    - op: replace
+</span><span style="color:#e6db74">      path: /spec/rules/0/host
+</span><span style="color:#e6db74">      value: your-gitlab-url.example.com
+</span><span style="color:#e6db74">    - op: replace
+</span><span style="color:#e6db74">      path: /spec/tls/0/hosts/0
+</span><span style="color:#e6db74">      value: your-gitlab-url.example.com
+</span><span style="color:#e6db74">    - op: replace
+</span><span style="color:#e6db74">      path: /spec/tls/0/secretName
+</span><span style="color:#e6db74">      value: example-com-wildcard-secret</span>    
+</code></pre></div><ol start="3">
+<li>We can create <code>minio-conn-secret</code> containing configuration for minio. It will be used for all the enabled S3 buckets except gitlab backups, we will create that separately. Input the information as per your setup and create the kubernetes secret.</li>
+</ol>
+<ul>
+<li>minio.config</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; EOF &gt; minio.config
+</span><span style="color:#e6db74">provider: AWS
+</span><span style="color:#e6db74">region: us-east-1
+</span><span style="color:#e6db74">aws_access_key_id: 4wsd6c468c0974006d
+</span><span style="color:#e6db74">aws_secret_access_key: 5d5e6c468c0974006cdb41bc4ac2ba0d
+</span><span style="color:#e6db74">aws_signature_version: 4
+</span><span style="color:#e6db74">host: minio.example.com
+</span><span style="color:#e6db74">endpoint: &#34;https://minio.example.com&#34;
+</span><span style="color:#e6db74">path_style: true
+</span><span style="color:#e6db74">EOF</span>
+</code></pre></div><ul>
+<li>Kubernetes secret</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create secret generic minio-conn-secret <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--from-file<span style="color:#f92672">=</span>connection<span style="color:#f92672">=</span>minio.config --dry-run<span style="color:#f92672">=</span>client -o yaml &gt;minio-connection-secret.yml
+</code></pre></div><ol start="4">
+<li>Next step is to create a secret with mino configuration for gitlab backup storage. Just replace minio endpoint, bucket name, access key &amp; secret key.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; EOF &gt; storage.config
+</span><span style="color:#e6db74">[default]
+</span><span style="color:#e6db74">access_key = be59435b326e8b0eaa
+</span><span style="color:#e6db74">secret_key = 6e0a10bd2253910e1657a21fd1690088
+</span><span style="color:#e6db74">bucket_location = us-east-1
+</span><span style="color:#e6db74">host_base = https://minio.example.com
+</span><span style="color:#e6db74">host_bucket = https://minio.example.com/gitlab-backups
+</span><span style="color:#e6db74">use_https = True
+</span><span style="color:#e6db74">default_mime_type = binary/octet-stream
+</span><span style="color:#e6db74">enable_multipart = True
+</span><span style="color:#e6db74">multipart_max_chunks = 10000
+</span><span style="color:#e6db74">multipart_chunk_size_mb = 128
+</span><span style="color:#e6db74">recursive = True
+</span><span style="color:#e6db74">recv_chunk = 65536
+</span><span style="color:#e6db74">send_chunk = 65536
+</span><span style="color:#e6db74">server_side_encryption = False
+</span><span style="color:#e6db74">signature_v2 = True
+</span><span style="color:#e6db74">socket_timeout = 300
+</span><span style="color:#e6db74">use_mime_magic = False
+</span><span style="color:#e6db74">verbosity = WARNING
+</span><span style="color:#e6db74">website_endpoint = https://minio.example.com
+</span><span style="color:#e6db74">EOF</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create secret generic storage-config --from-file<span style="color:#f92672">=</span>config<span style="color:#f92672">=</span>storage.config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--dry-run<span style="color:#f92672">=</span>client -o yaml &gt; secrets/storage-config.yml
+</code></pre></div><blockquote>
+<p>All other secrets can be used as is from repository or you can change all of them following <a href="https://docs.gitlab.com/charts/installation/secrets.html">gitlab documentation</a></p>
+</blockquote>
+<ol start="5">
+<li>
+<p>One of the most important secret is <code>gitlab-rails-secret</code>, in case of a disaster where you have to restore gitlab from a backup you must apply the same secret in your cluster as these keys will be used to decrypt the database etc from backup. Make sure you keep this consistent after first install.</p>
+</li>
+<li>
+<p>We reached the last part, Its alot of work to change database and other parameters one by one in configmaps.
+I have implemented some templating for this which can provide all the values vi environment variables and render the manifests with subvars, it will output these to destination folder and replace all the parameters defined as go templates.
+The values are self explanatory, <code>GITLAB_GITALY_STORAGE_SIZE</code> variable is used to specify how much storage is needed for gitaly and <code>GITLAB_STORAGE_CLASS</code> is the name of storage class.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GITLAB_URL<span style="color:#f92672">=</span>gitlab.example.com <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_REGISTRY_URL<span style="color:#f92672">=</span>registry.example.com <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_PAGES_URL<span style="color:#f92672">=</span>pages.example.com <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_POSTGRES_HOST<span style="color:#f92672">=</span>192.168.1.90 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_POSTGRES_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">5432</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_POSTGRES_USER<span style="color:#f92672">=</span>gitlab <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_POSTGRES_DB_NAME<span style="color:#f92672">=</span>gitlabhq_production <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_REDIS_HOST<span style="color:#f92672">=</span>192.168.1.91:6379 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_GITALY_STORAGE_SIZE<span style="color:#f92672">=</span>15Gi <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>GITLAB_STORAGE_CLASS<span style="color:#f92672">=</span>local-path <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>subvars dir --input gitlab-k8s-1.0 --out dirName
+</code></pre></div><p>Change into <code>dirName/gitlab-k8s-1.0</code> you can have a look to confirm if everything is in order before applying this in cluster.</p>
+<ol start="7">
+<li>The final step is to create the namespace <code>gitlab</code> and build with kustomize or kubectl. I prefer kustomize but you can also use kubectl with <code>-k</code> flag.</li>
+</ol>
+<ul>
+<li>Create namespace</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create namespace gitlab
+</code></pre></div><ul>
+<li>Apply the final manifest</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kustomize build gitlab-k8s-1.0/ | kubectl apply -f -
+<span style="color:#75715e"># or following if you have already changed into directory</span>
+kustomize build . | kubectl apply -f -
+
+<span style="color:#75715e"># With kubectl</span>
+kubectl apply -k  gitlab-k8s-1.0/
+<span style="color:#75715e"># or following if you have already changed into directory</span>
+kubectl apply -k  .
+</code></pre></div><ol start="8">
+<li>Head over to the endpoint you have configured for gitlab <code>https://gitlab.example.com</code> and login.</li>
+</ol>
+<ul>
+<li>Note:
+Default passwords
+<blockquote>
+<p>Gitlab &lsquo;root&rsquo; user&rsquo;s password configured as secret</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">LAwGTzCebner4Kvd23UMGEOFoGAgEHYDszrsSPfAp6lCW15S4fbvrVrubWsua9PI
+</code></pre></div><blockquote>
+<p>Postgres password configured as secret</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> ZDVhZDgxNWY2NmMzODAwMTliYjdkYjQxNWEwY2UwZGMK
+</code></pre></div></li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/guides/devops-toolchains/" title="DevOps Toolchains"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/guides/reverse-proxy-servers/" title="Reverse Proxy Servers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1634336620"></script>
+    <script src="/js/perfect-scrollbar.min.js?1634336620"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1634336620"></script>
+    <script src="/js/jquery.sticky.js?1634336620"></script>
+    <script src="/js/featherlight.min.js?1634336620"></script>
+    <script src="/js/highlight.pack.js?1634336620"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1634336620"></script>
+    <script src="/js/learn.js?1634336620"></script>
+    <script src="/js/hugo-learn.js?1634336620"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1634336620"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

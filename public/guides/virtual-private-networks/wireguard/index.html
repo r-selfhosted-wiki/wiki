@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="description" content="The official wiki for the reddit /r/selfhosted community">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>WireGuard | | /r/SelfHosted Official Wiki</title>
+
+    
+    <link href="/css/nucleus.css?1634336620" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1634336620" rel="stylesheet">
+    <link href="/css/hybrid.css?1634336620" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1634336620" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1634336620" rel="stylesheet">
+    <link href="/css/auto-complete.css?1634336620" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1634336620" rel="stylesheet">
+    <link href="/css/theme.css?1634336620" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1634336620" rel="stylesheet">
+    
+    <link href="/css/theme-green.css?1634336620" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1634336620"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/guides/virtual-private-networks/wireguard/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <img src="/images/logo.png" alt="Selfhosted Logo" height="100px" />
+<h5>/r/Selfhosted Official Wiki</h5>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1634336620"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1634336620"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1634336620"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/" title="Contribution Guidelines" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/">
+          Contribution Guidelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/get-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/get-started/">
+          Getting Started
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/adding-a-page/" title="Adding a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/adding-a-page/">
+          Adding a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/file-structure/" title="File Structure" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/file-structure/">
+          File Structure
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/modify-a-page/" title="Modify a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/modify-a-page/">
+          Modify a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/explanations/" title="Explanations" class="dd-item
+        
+        
+        
+        ">
+      <a href="/explanations/">
+          Explanations
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/difficulty-tiers/" title="Difficulty Tiers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/difficulty-tiers/">
+          Difficulty Tiers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/how-to-self-host/" title="How to Self-Host" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/how-to-self-host/">
+          How to Self-Host
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/reverse-proxies/" title="Intro to Reverse Proxies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/reverse-proxies/">
+          Intro to Reverse Proxies
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/operating-systems/" title="Operating Systems" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/operating-systems/">
+          Operating Systems
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/self-hosted-alternatives/" title="Self-Hosted Alternatives" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/self-hosted-alternatives/">
+          Self-Hosted Alternatives
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/what-is-self-hosting/" title="What is Self-Hosting?" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/what-is-self-hosting/">
+          What is Self-Hosting?
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/" title="DevOps Toolchains" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/">
+          DevOps Toolchains
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/gitlab-kubernetes/" title="Gitlab Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/gitlab-kubernetes/">
+          Gitlab Installation
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/" title="Reverse Proxy Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/">
+          Reverse Proxy Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/nginx/" title="Nginx Reverse Proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/nginx/">
+          Nginx Reverse Proxy
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/" title="Virtual Private Networks" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/">
+          Virtual Private Networks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/wireguard/" title="WireGuard" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/guides/virtual-private-networks/wireguard/">
+          WireGuard
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/webservers/" title="Webservers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/webservers/">
+          Webservers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>/r/Selfhosted Official Wiki</a> > <a href='/guides/'>Guides</a> > <a href='/guides/virtual-private-networks/'>Virtual Private Networks</a> > WireGuard
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/normal">normal</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              WireGuard
+            </h1>
+          
+
+        
+
+
+
+	<p>WireGuard is a secure VPN tunnel that aims to provide a VPN that is easy to use, fast, and with low overhead.</p>
+<p>It is cross-platform, but it is the part of the Linux kernel by default with only the need of userland tools to configure and deploy it.</p>
+<h4 id="preface">Preface</h4>
+<p>From now on, we are going to assume that we are working on Linux to configure WireGuard with one server and at least one client.</p>
+<p>This guide assumes that this configuration is being performed as root or the superuser. For your distribution this may require you to prefix commands with &lsquo;sudo&rsquo;.</p>
+<h4 id="installation">Installation</h4>
+<p>You can find more details about installing WireGuard on your own operating system here: <a href="https://www.wireguard.com/install/">https://www.wireguard.com/install/</a>. Please complete installation for both the server and client machine.</p>
+<h5 id="make-the-keys">Make the keys</h5>
+<p>The first step after installing WireGuard for your distribution is to generate keys. We should do this for the server first, but this will be the same for clients as well.</p>
+<pre><code>cd /etc/wireguard &amp;&amp; wg genkey | tee private.key | wg pubkey &gt; public.key
+</code></pre>
+<p>You should now have <strong>public.key</strong> and <strong>private.key</strong> files in <em>/etc/wireguard/</em>.</p>
+<blockquote>
+<p>It is important to make sure your private key stays private. No private key should ever leave the machine it was generated on. The client and server will only need the public keys for each other. If you are using the private keys for a client on a server, or vice-versa, you are doing something wrong.</p>
+</blockquote>
+<h4 id="server-configuration">Server configuration</h4>
+<p>Since this is the server, we need to make a new configuration file for it in <em>/etc/wireguard/</em>. We will call it <strong>wg0.conf</strong>. The full path should end up being <em>/etc/wireguard/wg0.conf</em>.</p>
+<blockquote>
+<p>Please use your own private key where appropriate. You can view the contents of a text file from the command line with <em>cat</em> (e.g.: <strong>cat /path/to/text.file</strong>).</p>
+</blockquote>
+<p>You can change the <strong>Address</strong> field to use a different address space (e.g.: 192.168.x.1) if you wish. If your server or clients are already using private IP space on a LAN, <strong>use something different</strong>.</p>
+<pre><code>[Interface]
+## Private IP address for the server to use
+Address = 10.0.0.1/24
+## When WG is shutdown, flushes current running configuration to disk. Any changes made to the configuration before shutdown will be forgotten
+SaveConfig = true
+## The port WG will listen on for incoming connections. 51194 is the default
+ListenPort = 51194
+## The server's private key. Not a file path, use the key file contents
+PrivateKey = PRIVATEKEY
+</code></pre>
+<p>After this is done we should be able to start the VPN tunnel and make sure it&rsquo;s enabled.</p>
+<blockquote>
+<p>Please consult the documentation for your Linux distribution for enabling/starting services. This guide is using system tools installed on Debian and Debian-based distributions.</p>
+</blockquote>
+<h5 id="debian"><em>Debian</em></h5>
+<pre><code>systemctl enable wg-quick@wg0 &amp;&amp; systemctl start wg-quick@wg0
+</code></pre>
+<p>That should be it for the server portion.</p>
+<h4 id="client-configuration">Client configuration</h4>
+<p>The client will need keys too. Use the same procedure to <a href="#make-the-keys" title="make keys">make keys</a> for the client as we&rsquo;ve done for the server.</p>
+<p>Once that is done we need to create a client configuration. Let&rsquo;s make <strong>wg0-client.conf</strong> in <em>/etc/wireguard/</em>. Full path should be <em>/etc/wireguard/wg0-client.conf</em>.</p>
+<p>You will need to choose a unique IP for the client. Everything should be the same as the server&rsquo;s private IP except the last octet.</p>
+<pre><code>[Interface]
+## This Desktop/client's private key ##
+PrivateKey = CLIENTPRIVATEKEY
+
+## Client IP address ##
+Address = 10.0.0.CLIENTOCTET/32
+
+[Peer]
+## WG server public key ##
+PublicKey = WGSERVERPUBLICKEY
+
+## set ACL ##
+## Uncomment the next line to use VPN for VPN connections only
+# AllowedIPs = 10.0.0.0/24
+## If you want to use the VPN for ALL network traffic, uncomment the following line instead
+# AllowedIPs = 0.0.0.0/0
+
+## Your WG server's PUBLIC IPv4/IPv6 address and port ##
+Endpoint = WGSERVERPUBLICIP:51194
+
+## Key connection alive ##
+PersistentKeepalive = 20
+</code></pre>
+<p>This should be all you need for configuring the client-end connection. We will need the private client IP you&rsquo;ve chosen and the public client key in a bit.</p>
+<p>As with the server, we need to enable the WireGuard client service. We don&rsquo;t start it yet because the server still doesn&rsquo;t know about this client.</p>
+<h5 id="debian-1"><em>Debian</em></h5>
+<pre><code>systemctl enable wg-quick@wg0-client
+</code></pre>
+<h4 id="configuring-the-client-as-a-peer">Configuring the client as a peer</h4>
+<p>Back on your server, we need to add the client so the server will accept the client connection. This is where your client private IP and public key will be used.</p>
+<p>Run the following command on the WG server to add the client.</p>
+<pre><code>wg set wg0 peer CLIENTPUBLICKEY allowed-ips CLIENTPRIVATEIP/32
+</code></pre>
+<p>You should not need to restart the WireGuard service.</p>
+<p>Let&rsquo;s start the WG client service on the client:</p>
+<h5 id="debian-2"><em>Debian</em></h5>
+<pre><code>systemctl start wg-quick@wg0-client
+</code></pre>
+<p>To check that it works, ping the WG server on its private IP.</p>
+<pre><code>$ ping -c 1 10.0.0.1
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=0.071 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.071/0.071/0.071/0.000 ms
+</code></pre>
+<p>If you consider your client Internet connection stable, this next step may not be necessary. You can consider yourself done if you wish.</p>
+<p>THE END (maybe)</p>
+<h4 id="wireguard-watchdog-optional">WireGuard watchdog (OPTIONAL)</h4>
+<p>Next we are going to setup a small cron job that will ping the WG server on its private IP to make sure the connection is still intact. If the connection fails, the tunnel will be restarted.</p>
+<p>You can put this script anywhere, but I usually choose to put it in <em>/usr/local/scripts/</em>.</p>
+<pre><code>mkdir /usr/local/scripts
+</code></pre>
+<p>Now for the script. I use <strong>wg-watch.sh</strong>. Let&rsquo;s assume you are going to use <em>/usr/local/scripts/wg-watch.sh</em> for the <strong>full file path</strong>.</p>
+<pre><code>#!/usr/bin/bash
+# Modified from https://mullvad.net/en/help/running-wireguard-router/
+# ping VPN gateway to test for connection
+# if no contact, restart!
+
+PING=/usr/bin/ping
+## DEBIAN
+SERVICE=/usr/sbin/service
+
+tries=0
+while [[ $tries -lt 3 ]]
+do
+    if $PING -c 1 10.0.0.1
+    then
+            echo &quot;wg works&quot;
+            exit 0
+    fi
+    echo &quot;wg fail&quot;
+    tries=$((tries+1))
+done
+echo &quot;wg failed 3 times - restarting tunnel&quot;
+## DEBIAN
+$SERVICE wg-quick@wg0-client restart
+</code></pre>
+<blockquote>
+<p>Please make sure the paths to certain binaries are congruent with your own system. If they are not, the script will fail. Some distributions put them in different places (e.g.: /bin/bash instead of /usr/bin/bash). If you are not sure where they are, you can do <code>which binaryname</code> that should report the full path to the binary.</p>
+</blockquote>
+<pre><code>$ which bash
+/usr/bin/bash
+</code></pre>
+<p>Make the script executable:</p>
+<pre><code>chmod +x /usr/local/scripts/wg-watch.sh
+</code></pre>
+<p>Once we have that done, we need to schedule it. I choose to schedule this every five minutes, but if you want to wait longer that is up to you.</p>
+<p>Schedule the script to run on a regular basis using <em>cron</em>. You can find out more about cron here: <a href="https://opensource.com/article/17/11/how-use-cron-linux">https://opensource.com/article/17/11/how-use-cron-linux</a></p>
+<p>We&rsquo;re going to use <em>crontab</em> to add this script to the list of jobs.</p>
+<pre><code>crontab -e
+</code></pre>
+<p>Once the crontab editor is open, add this:</p>
+<pre><code>*/5 * * * * /usr/local/scripts/wg-watch.sh
+</code></pre>
+<p>Write and close the file. Crontab should confirm that it has been updated.</p>
+<p>You should be set with a WireGuard VPN tunnel between a server and a client along with a script to bring the tunnel back up if it fails.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/guides/virtual-private-networks/" title="Virtual Private Networks"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/guides/webservers/" title="Webservers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1634336620"></script>
+    <script src="/js/perfect-scrollbar.min.js?1634336620"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1634336620"></script>
+    <script src="/js/jquery.sticky.js?1634336620"></script>
+    <script src="/js/featherlight.min.js?1634336620"></script>
+    <script src="/js/highlight.pack.js?1634336620"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1634336620"></script>
+    <script src="/js/learn.js?1634336620"></script>
+    <script src="/js/hugo-learn.js?1634336620"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1634336620"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

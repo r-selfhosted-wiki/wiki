@@ -10,4 +10,4 @@ No specific DevOps tool or tools equate to “doing DevOps”, but there are ple
 
 #### DevOps Toolchains
 
-- [Gitlab Installation on Kuberntes]({{<relref "gitlab-kubernetes.md">}} "gitlab")
+- [Gitlab Installation on Kuberntes]({{<relref "Gitlab Kubernetes">}} "gitlab")

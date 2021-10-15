@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hard Tag on /r/SelfHosted Official Wiki</title>
+    <link>http://localhost/tags/hard/</link>
+    <description>Recent content in Hard Tag on /r/SelfHosted Official Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="http://localhost/tags/hard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Difficulty Tiers</title>
+      <link>http://localhost/getting-started/difficulty-tiers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/getting-started/difficulty-tiers/</guid>
+      <description>How hard is stuff? Stuff can be hard. Stuff can also be easy. Some things here are hard. Some things are easy. Let&amp;rsquo;s define some difficulty tiers.
+Easy / Basic No worries here, folks! Everything should be done with a GUI with maybe some stuff needing a command or two, or maybe just editing some text files. Instructions should come in picture form.
+Operating systems in this tier are Ubuntu Linux, Windows, or OS X.</description>
+    </item>
+    
+  </channel>
+</rss>
