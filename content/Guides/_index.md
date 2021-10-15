@@ -16,4 +16,4 @@ Find the link to your desired guide below!
 
 #### DevOps Toolchains
 
-- - [Gitlab Installation on Kuberntes]({{<relref "gitlab-kubernetes.md">}} "gitlab")
+- - [Gitlab Installation on Kuberntes]({{<relref "DevOps Toolchains/Gitlab Kubernetes">}} "gitlab")

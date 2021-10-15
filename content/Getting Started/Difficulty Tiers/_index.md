@@ -7,7 +7,7 @@ tags: [easy, normal, hard]
 
 Stuff can be hard. Stuff can also be easy. Some things here are hard. Some things are easy. Let's define some difficulty tiers.
 
-#### Easy / Basic
+### Easy / Basic
 
 No worries here, folks! Everything should be done with a GUI with *maybe* some stuff needing a command or two, or maybe just editing some text files. Instructions should come in picture form.
 
