@@ -151,8 +151,8 @@ acme.sh --install-cert --domain YOURDOMAIN --cert-file "$CERTIFICATE_DIRECTORY/c
 
 ## 5. Automatic renewal
 
-Certificates are only valid for 90 days. Therefore acme.sh will create a daily cron job running at a random time at night that will:
-* renew every certificate every 60 days
+Certificates are only valid for 90 days. Because of this acme.sh will create a daily cron job running at a random time at night that will:
+* renew every certificate after 60 days
 * copy the certificate and key files to their destination (as configured in [4. Install the certificate to a target directory](#4-install-the-certificate-to-a-target-directory))
 * run the reload command (as configured in [4. Install the certificate to a target directory](#4-install-the-certificate-to-a-target-directory))
 
@@ -164,11 +164,37 @@ ___
 
     Run the command from [3. Issue a certificate](#3-issue-a-certificate) again with all domain names (old and new) that you want in your certificate. As long as the primary domain stays the same it is not necessary to install the certificate again.
 
-2. Why change the default CA to Let's Encrypt?
+    After changing the domnain names with the `--issue` command, it will not copy the new certificate to it's destination or run the `--reloadcmd` that was set with the `--install-cert` command. You will either have to do it by yourself or run the `--install-cert` command again (with all the same parameters as before) or copy the files manually from the `.acme.sh` directory in your home directory. If you don't know the parameters from last time you can look them up in the info about the certificate (see next point).
+
+1. Show configuration of acme.sh:
+
+    ```sh
+    acme.sh --info
+    ```
+
+1. Show configuration of a certificate:
+
+    ```sh
+    acme.sh --info -d YOURDOMAIN
+    ```
+
+1. List all certificates issued with acme.sh:
+
+    ```sh
+    acme.sh --list
+    ```
+
+1. Remove a certificate from acme.sh:
+
+    ```sh
+    acme.sh --remove -d YOURDOMAIN
+    ```
+
+1. Why change the default CA to Let's Encrypt?
 
     I did encounter bugs with the default CA of acme.sh (ZeroSSL) which where gone once I switched to Let's Encrypt.
 
-3. How do I create a wildcard certificate?
+1. How to create a wildcard certificate:
 
     Add *.YOURSUBDOMAIN.YOURSITEDOMAIN.com as an alternative domain name to your certificate:
 
@@ -176,11 +202,13 @@ ___
     acme.sh --issue --dns dns_... --domain YOURSUBDOMAIN.YOURSITEDOMAIN.com --domain *.YOURSUBDOMAIN.YOURSITEDOMAIN.com
     ```
 
-    In theory it works with Duck DNS, but if you add the wildcard as an alternative name there sadly is a bug or incompatibility (depending on who you want to blame) and acme.sh runs into an infitie loop. It works if you only use the wildcard domain as the primary domain name. But with only a wildcard in the certificate I don't know if this certificate will play nice with all browsers and applications.
+    In theory it works with Duck DNS, but if you add the wildcard as an alternative name there sadly is a bug or incompatibility (depending on who you want to blame) and acme.sh runs into an infitie loop. It works if you only use the wildcard domain as the primary domain name. But with only a wildcard in the certificate I don't know if this certificate will play nice with all devices, browsers and applications.
     
     If you want to use acme.sh and create a wildcard certificate desec.io works as a DNS provider.
 
-4. Add the `--test` parameter to the `--issue` command to create test (or staging) certificates which are not valid but are better if you are just testing things. The certificate will stay in the staging environment until you renew it without the `--test` parameter:
+1. How to create a staging certificate for testing:
+    
+    Add the `--test` parameter to the `--issue` command to create test (or staging) certificates which are not valid but are better if you are just testing things. The certificate will stay in the staging environment until you renew it without the `--test` parameter:
 
     ```sh
     acme.sh --renew -d YOURSUBDOMAIN.YOURSITEDOMAIN.com
@@ -188,9 +216,7 @@ ___
 
     More on that topic here: https://letsencrypt.org/docs/staging-environment/
 
-5. If you don't need a certificate anymore you can just delete the directory with your domain name from the `.acme.sh` directory in your home directory.
-
-6. Uninstall acme.sh with the following command:
+1. Uninstall acme.sh:
 
     ```sh
     acme.sh --uninstall
