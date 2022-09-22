@@ -1,2 +1,3 @@
 config.toml
+.hugo_build.lock
 ./public/
