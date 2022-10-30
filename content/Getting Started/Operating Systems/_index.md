@@ -16,7 +16,8 @@ While paying for a licensed product is always an option if you find the value in
 These are operating systems that are administered with a GUI/web-based frontend to focus on ease of use.
 
 - [YunoHost](https://yunohost.org) | [Demo](https://yunohost.org/#/try)
-- [FreeNAS](https://www.freenas.org/) | A FreeBSD-based NAS operating system with ZFS support.
+- [TrueNAS CORE](https://www.truenas.com/truenas-core/) | A FreeBSD-based NAS operating system with ZFS support. Published by [iXsystems](https://www.ixsystems.com/), [TrueNAS and FreeNAS were "Unified" in late 2021](https://www.ixsystems.com/history/).
+- [TrueNAS SCALE](https://www.truenas.com/truenas-scale/) | A Debian Linux NAS operating system. Published by iXsystems, and based around work done for TrueNAS CORE.
 - [OpenMediaVault](https://www.openmediavault.org/)
 - [DietPi](https://dietpi.com/) | Built for single-board computers like Raspberry Pi or Pine64 boards.
 - [Sandstorm](https://sandstorm.io/) | [Demo](https://alpha.sandstorm.io/apps)
