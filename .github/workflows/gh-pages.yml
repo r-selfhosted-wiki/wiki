@@ -29,7 +29,7 @@ jobs:
           1c1
           < baseURL = "http://localhost/"
           ---
-          > baseURL = "https://hugonikanor.github.io/r-selfhosted-wiki"
+          > baseURL = "https://r-selfhosted-wiki.github.io/wiki"
           EOF
       - name: Build page
         run: hugo
