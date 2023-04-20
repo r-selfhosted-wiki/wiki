@@ -1,32 +1,65 @@
-name: github pages
-
+name: Build
 on:
   push:
     branches:
-      - main  # Set a branch that will trigger a deployment
-  pull_request:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout project
+        uses: actions/checkout@v3
+      - name: Checkout submodules
+        run: |
+          git submodule init
+          git submodule update
+      - name: Install build dependencies
+        run: |
+          sudo apt update
+          sudo apt install hugo
+      - name: Configure hugo
+        run: |
+          patch -o config.toml config.toml.example << EOF
+          1c1
+          < baseURL = "http://localhost/"
+          ---
+          > baseURL = "https://r-selfhosted-wiki.github.io/wiki"
+          EOF
+      - name: Build page
+        run: hugo
+      - name: Upload atrifacts
+        uses: actions/upload-artifact@v3
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          path: public
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+  prepare_page:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - name: Retrieve build
+        uses: actions/download-artifact@v3
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v1.0.8
         with:
-          hugo-version: 'latest'
-          # extended: true
+          path: artifact
 
-      - name: Build
-        run: hugo --minify
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: prepare_page
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          preview: true
+
